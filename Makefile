@@ -1,14 +1,14 @@
 Init:
 	@echo "hi this is init"
 
-Validate:
+Validate: Init
 	@echo "hey, this is validate "
 
-Plan: Init Validate 
+Plan: Validate
 	@echo "this is terraform plan, before plan applying terraform init and validate,"
 
-Apply: Init Validate Plan 
+Apply: Plan
 	@echo "this is terraform apply, beofre apply applying init, validate and plan"
 
-Destroy: Validate Plan 
+Destroy: Plan
 	@echo "this is terraform destroy, before destroy applying validate and plan"
